@@ -6,7 +6,7 @@ from data_access.database import create_tables, get_connection
 def voeg_voorbeelddata_toe():
     games = [
         ("League of Legends", "MOBA"),
-        ("Fortinite", "Battle Royale"), 
+        ("Fortnite", "Battle Royale"), 
     ]
     
     sessies = [
@@ -19,12 +19,12 @@ def voeg_voorbeelddata_toe():
     with get_connection() as conn:
         for game in games:
             conn.execute("INSERT INTO games (naam, genre) VALUES (?, ?)", game)
-            for sessie in sessies:
-                conn.execute(
-                    "INSERT INTO sessies (game_id, datum, minuten, gewonnen) "
-                    "VALUES (?, ?, ?, ?)",
-                    sessie,         
-                )
+        for sessie in sessies:
+            conn.execute(
+                "INSERT INTO sessies (game_id, datum, minuten, gewonnen) "
+                "VALUES (?, ?, ?, ?)",
+                sessie,
+            )
                 
 def main():
     if os.path.exists(DB_PATH):

@@ -1,1 +1,13 @@
-class Game:    def __init__ (self, naam, genre, id=None):        self.naam = naam        self.genre = genre        self.id = id            def __str__(self):        return f"{self.naam} ({self.genre})"    if __name__ == "__main__":    lol = Game("League of Legends", "Moba", 1)    print(lol)
+class Game:
+    def __init__ (self, naam, genre, id=None):
+        self.naam = naam
+        self.genre = genre
+        self.id = id
+        
+    def __str__(self):
+        return f"{self.naam} ({self.genre})"
+    
+if __name__ == "__main__":
+    lol = Game("League of Legends", "Moba", 1)
+    print(lol)
+
